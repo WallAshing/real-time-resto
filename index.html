@@ -339,11 +339,13 @@
                 })
                 otherUsersLatLng.forEach(userLatLng => {
                     let otherUserMarker = L.marker(userLatLng.latLng).addTo(map)
-                    const p = document.createElement('p')
-                    p.style.textAlign = 'center'
-                    p.innerHTML = userLatLng.username
-                    path.bindPopup(p).openPopup();
-                    otherUsersMarker.push(otherUserMarker)
+                    otherUsersMarker.push(otherUserMarker)g
+                    if (path) {
+                        const p = document.createElement('p')
+                        p.style.textAlign = 'center'
+                        p.innerHTML = userLatLng.username
+                        path.bindPopup(p).openPopup();
+                    }
                 })
             }
 
